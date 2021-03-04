@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Book en dag hos Oplev Parken og prøv vores forskellige aktiviteter." />
+    <title>Booking</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <!-- Morten -->
+        <nav>
+            <div class="navContainer">
+                <a href="index.html">
+                    <h3 class="logo">Oplev<span> Parken</span></h3>
+                </a>
+                <div class="menu">
+                    <a href="booking.html">Booking</a>
+                    <a href="fodboldgolf.html">Fodboldgolf</a>
+                    <a href="legefordeseje.html">Lege for de seje</a>
+                    <a href="generelt.html">Generelt</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <article class="bgImg">
+        <div class="bread">
+            <p><a href="index.html">Forside</a>&#62;Booking</p>
+        </div>
+        <!--Form til booking - Morten, Frederik -->
+        <section class="formContainer">
+            <div class="header">
+                <h2>BOOKING</h2>
+            </div>
+            <form id="form" class="form">
+                <section class="form_grid_1">
+                    <!--NAVN -->
+                    <div class="form-control">
+                        <label for="navn">Navn:</label>
+                        <input type="text" placeholder="Navn" id="navn" />
+                        <small>Navn må ikke være tomt</small>
+                    </div>
+                    <!--EMAIL-->
+                    <div class="form-control">
+                        <label for="email">Email:</label>
+                        <input type="email" placeholder="f.eks@mail.dk" id="email" />
+                        <small>Email må ikke være tomt</small>
+                    </div>
+                    <!--ANTAL VOKSNE-->
+                    <div class="form-control">
+                        <label>Antal Voksne:</label>
+                        <select id="antalV" name="voksne">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </section>
+                <section class="form_grid_2">
+                    <!--NR-->
+                    <div class="form-control">
+                        <label>Telefon nr.:</label>
+                        <input type="tel" placeholder="Telefon nr." id="telefon">
+                        <small>Telefon nr. må ikke være tomt.</small>
+                    </div>
+                    <!--DATO-->
+                    <div class="form-control">
+                        <label for="dato">Dato:</label>
+                        <input type="text" placeholder="dd/mm/åååå" id="dato" />
+                        <small>Dato må ikke være tomt.</small>
+                    </div>
+                    <!--ANTAL BØRN-->
+                    <div class="form-control">
+                        <label for="antalB">Antal børn &#40;6-15år&#41;:</label>
+                        <select id="antalB" name="Børn">
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                        </select>
+                    </div>
+                </section>
+                <div class="knap">
+                    <button>BOOK</button>
+                </div>
+            </form>
+        </section>
+    </article>
+
+    <!-- Morten -->
+    <article class="priser">
+        <h2 class="priserHeader">Priser</h2>
+        <section class="priserTekst">
+            <div class="kort entre">
+                <h2 class="prisHeader">Entre</h2>
+                <ul>
+                    <li>
+                        <pre>Voksne:         <span class="pris">100kr.</span>/pers</pre>
+                    </li>
+                    <li>
+                        <pre>Børn &#40;6-15år&#41;:  <span class="pris">50kr.</span>/pers</pre>
+                    </li>
+                    <li>
+                        <pre>Børn &#40;0-5år&#41;:   <span class="pris">Gratis</span></pre>
+                    </li>
+                </ul>
+                <a class="button" href="booking.html">BOOK</a>
+            </div>
+
+            <div class="kort season">
+                <h2 class="prisHeader">Sæson</h2>
+                <ul>
+                    <li>
+                        <pre>Voksne:         <span class="pris">350kr.</span>/pers</pre>
+                    </li>
+                    <li>
+                        <pre>Børn &#40;6-15år&#41;:  <span class="pris">175kr.</span>/pers</pre>
+                    </li>
+                    <li>
+                        <pre>Børn &#40;0-5år&#41;:   <span class="pris">Gratis</span></pre>
+                    </li>
+                </ul>
+                <a class="button" href="booking.html">BOOK</a>
+            </div>
+
+            <div class="kort insti">
+                <h2 class="prisHeader">Institutionspriser</h2>
+                <ul>
+                    <li>
+                        <pre>Mandag-torsdag:   <span class="pris">30kr.</span>/pers</pre>
+                    </li>
+                    <li>Ankomst før kl 14</li>
+                </ul>
+                <p class="obsKort">
+                    Skal forudbestilles mindst 4 dage i forvejen.
+                </p>
+                <a class="button" href="booking.html">BOOK</a>
+            </div>
+
+        </section>
+
+        <!-- Morten -->
+
+        <section class="betaling">
+            <div class="obs">
+                <p>!OBS: Der er kun adgang for betalende gæster, og betaling
+                    skal foretages ved ankomst!</p>
+            </div>
+            <div class="betalingInfo">
+                <p>Betaling foregår ved ekspeditionen. <br>Der vil ikke altid være folk til at tage imod dig, men udfyld
+                    en kuvert, <br>læg pengene i kuverten eller overfør beløbet med MobilePay til 10409, <br>og skriv
+                    MobilePay på kuverten.
+                    <br>Put kuverten i postkassen, der sidder udvendig på skuret.
+                </p>
+            </div>
+            <div class="betalingInfo2">
+                <p>Når entréen er betalt kan alle aktiviteter benyttes hele dagen, hvis man har lyst. <br>Alle
+                    aktiviteter kan prøves til den samme pris! <br>– Dog med undtagelse af sumobrydning.</p>
+            </div>
+        </section>
+
+        <div class="priserImg">
+            <img src="img/booking_bold.jpg" alt="Billede af Bold">
+        </div>
+
+    </article>
+
+    <footer>
+
+        <!-- Morten -->
+
+        <div>
+            <p>Oplev Parken</p>
+            <p>Korsvej 4</p>
+            <p>8530 Hjortshøj</p>
+        </div>
+        <div id="socials">
+            <div class="s-m">
+                <a href="https://www.facebook.com/OplevParken"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/oplevparken/"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:info@oplevparken.dk"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- load jQuery library -->
+    <script type="text/javascript" src="js/jquery-3.5.1.min.js"></script>
+
+    <!-- load JavaScript -->
+    <script src="js/js.js"></script>
+
+</body>
+
+</html>

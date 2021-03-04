@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Få et overblik over vores åbningstider og lokation." />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Generelt</title>
+</head>
+
+<body>
+    <header>
+        <!-- Morten -->
+        <nav>
+            <div class="navContainer">
+                <a href="index.html">
+                    <h3 class="logo">Oplev<span> Parken</span></h3>
+                </a>
+                <div class="menu">
+                    <a href="booking.html">Booking</a>
+                    <a href="fodboldgolf.html">Fodboldgolf</a>
+                    <a href="legefordeseje.html">Lege for de seje</a>
+                    <a href="generelt.html">Generelt</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Morten -->
+    <div class="bread">
+        <p><a href="index.html">Forside</a>&#62;Generelt</p>
+    </div>
+
+    <!-- Frederik-->
+    <main class="containerj">
+        <section class="card">
+            <div>
+                <div class="header">
+                    <h2>ÅBNINGSTIDER</h2>
+                </div>
+                <ul>
+                    <li><b>Mandag:</b> 09.00-20.00
+                    </li>
+                    <li>
+                        <b>Tirsdag:</b> 09.00-20.00
+                    </li>
+                    <li>
+                        <b>Onsdag:</b> 09.00-20.00
+                    </li>
+                    <li>
+                        <b>Torsdag:</b> 09.00-20.00
+                    </li>
+                    <li>
+                        <b>Fredag:</b> 09.00-20.00
+                    </li>
+                    <li>
+                        <b>Lørdag:</b> 09.00-20.00
+                    </li>
+                    <li>
+                        <b>Søndag:</b> 09.00-20.00
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <div class="header">
+                    <h2>Vejroversigt</h2>
+                </div>
+                <!-- herunder kan du se vejroplysningerne - Emil-->
+                <div id="result"></div>
+                <script>
+                    /*
+@datasæt hentes sådan:
+http://api.openweathermap.org/data/2.5/weather?
+q=Bendstrup,8530
+&lang=da
+&units=metric
+&appid=201d090c9cceacfc8931df89310ebfbb
+*/
+                    $(document).ready(function () {
+
+
+                        fetch(
+                                "http://api.openweathermap.org/data/2.5/weather?q=bendstrup,8530&lang=da&units=metric&appid=c9e05832a1418b95b7b66c07459d781a"
+                            )
+                            .then(response => {
+                                return response.json();
+                            }).then(data => {
+
+
+                                console.log(data);
+
+                                // append = da. tilføj (noget tilføjes et element med id="result"
+                                $('#result').append(
+
+                                    // tilføjer ("append") en div til vejroplysninger
+                                    '<div class="weatherInfo">' +
+
+                                    // tilføjer bynavn
+                                    '<h1> ' + data.name + ' </h1>' +
+
+                                    // tilføjer en beskrivelse af vejret lige nu
+                                    '<h2>Vejr: ' + data.weather[0].description + '</h2>' +
+                                    '<h2>Temp: ' + data.main.temp + '°' + '</h2>' +
+                                    '<h2>Vindhastighed: ' + data.wind.speed + 'm/s' + '</h2>' +
+                                    // tilføjer vejrsymbol
+                                    '<figure>' +
+                                    '<img src="http://openweathermap.org/img/w/' + data.weather[0]
+                                    .icon + '.png" alt="Vejrsymbol">' +
+                                    '</figure>' +
+
+                                    // afslutter #weatherInfo taggen
+                                    '</div>'); // .append til #result slut
+
+                                // her er ikonerne: https://openweathermap.org/weather-conditions 
+
+                            }).catch(err => {
+                                // Fejl besked
+                                console.log('Der skete en fejl');
+                            });
+
+                    }); // document ready end
+                </script>
+            </div>
+        </section>
+
+        <!-- Frederik -->
+        <section class="card" data-aos="fade-left">
+            <img src="img/ordensregler.jpg" alt="">
+            <div class="regler">
+                <div class="header">
+                    <h2>ORDENSREGLER</h2>
+                </div>
+                <ul>
+                    <li>OBS: Der er kun adgang for betalende gæster, og betaling SKAL foretages ved ankomst.</li>
+                    <li>Der må IKKE anvendes fodboldstøvler.</li>
+                    <li>Dåser og flasker samt andet affald skal fjernes fra banen eller lægges i de opstillede
+                        affaldsbeholdere.</li>
+                    <li>Der udvises respekt for andre gæster. Hold passende afstand, og undlad at sparke/kaste, hvis
+                        der er fare for at ramme andre.</li>
+                    <li>Unødig færdsel i marken udenfor banen ikke tilladt!</li>
+                    <li>Der må ikke spilles boldspil ved klubhuset</li>
+                    <li>Der må IKKE ryges i klubhuset.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="card" id="cardMap" data-aos="fade-left">
+            <div>
+                <div class="header">
+                    <h2>FIND VEJ</h2>
+                </div>
+                <p>Oplev Parken
+                    <br>Korsvej 4
+                    <br>8530 Hjortshøj
+                    <br>Mobil: 20205221
+                    <br><br>Oplev Parken ligger 17 km fra Århus og 27 km fra Randers
+                    <br>Linje 12 kører lige til Oplev Parken, stå af i Bendstrup</p>
+            </div>
+            <!-- Emil -->
+            <section id="map1"></section>
+
+            <script>
+                mapboxgl.accessToken =
+                    'pk.eyJ1IjoibmFnZ29yYXRoIiwiYSI6ImNrZnFraHBkNTBidXYydG8wcnNpd2diY2wifQ.XACaF-Waep-sSnedONVNlg';
+                var map = new mapboxgl.Map({
+                    container: 'map1', // container id
+                    style: 'mapbox://styles/naggorath/cki7bew3vadtp19qu9hs2uj5d', // style URL
+                    center: [10.238, 56.2736], // starting position [lng, lat]
+
+                    zoom: 17.14 // starting zoom
+                });
+            </script>
+        </section>
+
+
+    </main>
+    <!-- Fredeirk -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <footer>
+        <!-- Morten -->
+        <div>
+            <p>Oplev Parken</p>
+            <p>Korsvej 4</p>
+            <p>8530 Hjortshøj</p>
+        </div>
+        <div id="socials">
+            <div class="s-m">
+                <a href="https://www.facebook.com/OplevParken"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/oplevparken/"><i class="fab fa-instagram"></i></a>
+                <a href="mailto:info@oplevparken.dk"><i class="far fa-envelope"></i></a>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- Frederik -->
+    <script>
+        AOS.init({
+            offset: 400,
+            duration: 1000
+        });
+    </script>
+</body>
+
+</html>
